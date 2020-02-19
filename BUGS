@@ -1,0 +1,31 @@
+I'm able to get this thing to respond to duplicate packets.  I'll resume
+ripping out libnet and see if that sticks around, but I don't like it.
+
+Things I tried:
+
+- Seeing if there were rogue sending processes that weren't killed by the
+  interrupt (there didn't seem to be, either by ps or tcpdump)
+- Adding and removing options (didn't seem to matter)
+
+What to try next:
+
+- tcpdump while doing a tcpping.  That should sort all of this out.
+
+Hacks:
+
+- Throw out any sequence number that we don't remember giving
+
+** UPDATE **
+
+After re-running, I can't manage to get this to do it again.  Not sure what's
+up.  This obviously bothers me, but if I can't duplicate, there's not much I
+can do.  Let me know if you encounter this!
+
+-----------------------------------------------------------------------------
+
+There's still one warning on Mac machines, but it's perfectly harmless AFAICT.
+
+-----------------------------------------------------------------------------
+
+I should try to drop privileges to the one needed for Linux and/or Mac OS X in
+both the client and server.  It's a pretty limited set, after all.
